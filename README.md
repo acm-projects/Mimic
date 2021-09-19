@@ -6,21 +6,21 @@ Worried about awkward, creepy, or downright dangerous interactions? This mobile 
 
 1. Alarm Mode / Call Mode where either the app sets off an alarm clock sound or starts a fake call
 2. Mock call screen / customizable name for fake caller
-3. Mock homescreen and hidden alarm / call buttons
+3. Mock lock screen and hidden alarm / call buttons
+4. Fake Screens to implement in order: Lock Screen, Coffee House App, Ecommerce, Chat
+5. Option to have custom ringtones
+6. Timed fake calls
+7. Physical button triggers for calls (Pending research, possible stretch goal)
 
 # Stretch Goals
 
-1. Support for different ringtones
-2. A more subtle way to start the alarm or fake call: button click patterns or a touch combination in the app
-3. More varied fake app screens. Ideas: Mimics a travel, restaurant, chat, or online shopping app.
+1. SOS with app sending location to preselected contacts
+2. App pings other users near the area for help
+3. Root access / start Mimic from lock screen
 
 # Tech Stack
 
-- Flutter: option 1 for main App
-
-  - [General documentation](https://flutter.dev/docs)
-
-- React Native: option 2 for main app
+- React Native:
 
   - [General documentation](https://reactnative.dev/docs/getting-started)
 
@@ -40,15 +40,14 @@ For icons:
 
 - [React_Native](https://reactnative.dev/docs/environment-setup) - A mobile framework
 
-- [Flutter](https://flutter.dev/docs/get-started/install) - A mobile framework
-
-- [Android Studio](https://developer.android.com/studio) **Needed for Flutter**
-
-  - [General Documentation](https://developer.android.com/studio/intro)
-
 - [Figma](https://www.figma.com/) - Wireframing tool
 
 - [Git](https://git-scm.com/downloads) - version control software
+
+# Tutorials
+
+- [React Native](https://www.youtube.com/watch?v=Hf4MJH0jDb4) 51 minutes
+- [React JS](https://www.youtube.com/watch?v=w7ejDZ8SWv8) 1hr 48 minutes
 
 # Resources
 
