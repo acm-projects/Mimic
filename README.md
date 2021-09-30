@@ -4,19 +4,19 @@ Worried about awkward, creepy, or downright dangerous interactions? This mobile 
 
 # MVP
 
-1. Alarm Mode / Call Mode where either the app sets off an alarm clock sound or starts a fake call
-2. Mock call screen / customizable name for fake caller
-3. Mock lock screen and hidden alarm / call buttons
-4. Fake Screens to implement in order: Lock Screen, Coffee House App, Ecommerce, Chat
+1. Mock call screen / customizable name for fake caller
+2. Mock lock screen and hidden call buttons
+3. Fake Screens to implement in order: Lock Screen, Coffee House App, Ecommerce, Chat
+4. Replayable tutorial
 5. Option to have custom ringtones
-6. Timed fake calls
-7. Physical button triggers for calls (Pending research, possible stretch goal)
+6. Physical button triggers for calls (Pending research, possible stretch goal)
 
 # Stretch Goals
 
 1. SOS with app sending location to preselected contacts
 2. App pings other users near the area for help
 3. Root access / start Mimic from lock screen
+4. Timed fake calls
 
 # Tech Stack
 
@@ -48,6 +48,8 @@ For icons:
 
 - [React Native](https://www.youtube.com/watch?v=Hf4MJH0jDb4) 51 minutes
 - [React JS](https://www.youtube.com/watch?v=w7ejDZ8SWv8) 1hr 48 minutes
+- [Official Firebase/React Native tutorial](https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html) : blog / how to article
+- [FreeCodeCamp Firebase Article](https://www.freecodecamp.org/news/react-native-firebase-tutorial/)
 
 # Resources
 
@@ -64,15 +66,11 @@ For icons:
 | ------------ | --------------------------------------------- | ------------------------------------------------------------------------------ |
 | 1            | On boarding tasks                             | Meet the team, set meeting dates, schedule design day.                         |
 | 2            | Research tech stack and create wireframes     | Practice apps with chosen tech stack + wireframes                              |
-| 3            | Code app screens, code alarm logic and sounds | 50% or more progress on all pages. Completed alarm logic.                      |
-| 4            | Code app screens, code call logic             | 80% or more progress on all screens. Completed call logic.                     |
+| 3            | Code app screens, code alarm logic and sounds | 50% or more progress on all pages. Completed call logic.                       |
+| 4            | Code app screens, code call logic             | 80% or more progress on all screens. Completed database functionality.         |
 | 5            | Code app screens and integrate backend        | functioning MVP                                                                |
 | 6            | Front end touch ups and backend stretch goals | Polished MVP                                                                   |
 | 7            | Stretch Goals                                 | N/A                                                                            |
 | 8            | Create Presentation                           | Hammer out the order of presenters, plan/gimmick, and complete slideshow/video |
 | 9            | Practice Presentation                         | N/A                                                                            |
 | Presentation | Wow the judges like I know you will :)        | The growth you made while in Projects! ＼(^-^)／                               |
-<<<<<<< HEAD
-=======
-
->>>>>>> 00a804ad40dffcb7d72f3d60159789dcc7294ed9
