@@ -72,3 +72,7 @@ For icons:
 | 8            | Create Presentation                           | Hammer out the order of presenters, plan/gimmick, and complete slideshow/video |
 | 9            | Practice Presentation                         | N/A                                                                            |
 | Presentation | Wow the judges like I know you will :)        | The growth you made while in Projects! ＼(^-^)／                               |
+<<<<<<< HEAD
+=======
+
+>>>>>>> 00a804ad40dffcb7d72f3d60159789dcc7294ed9
