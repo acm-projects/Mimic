@@ -55,14 +55,13 @@ const styles = StyleSheet.create({
     },
     time: {
         fontSize: 80,
-        fontWeight: '200',
+        fontWeight: '300',
         color: '#FFFF',
         textAlign: 'center'
     },
     date: {
-        fontFamily: '',
         fontSize: 22,
-        fontWeight: '300',
+        fontWeight: '350',
         color: '#FFFF',
         textAlign: 'center',
         letterSpacing: 0.32
