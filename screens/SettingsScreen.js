@@ -1,25 +1,3 @@
-// import React, { Component } from 'react';
-// import { StyleSheet, Text, View } from 'react-native';
-// import 'react-native-gesture-handler';
-// import { NavigationContainer } from '@react-navigation/native';
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Setting Screen</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
 
 //This is an example code for Navigator// 
 import React, { Component } from 'react';
@@ -32,7 +10,7 @@ export default class SettingsScreen extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text>You are on SecondPage</Text>
+        <Text>You are on the settings page</Text>
       </View>
     );
   }

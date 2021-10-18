@@ -15,7 +15,14 @@ const App = createStackNavigator({
     navigationOptions: {
       header: null,
     }}, 
-    SettingsScreen: { screen: SettingsScreen}, 
+   // LockScreen: {screen: LockScreen},
+    SettingsScreen: { screen: SettingsScreen
+      ,
+      //uncomment to remove navigation bar on settings screen
+      // navigationOptions:{
+      //   header: null,
+      // }
+    }, 
   },
   {
     initialRouteName: 'LockScreen',

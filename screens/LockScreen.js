@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
-import { Text, View, StyleSheet, SafeAreaView, Image, Dimensions, StatusBar, TouchableOpacity} from 'react-native'
+import { Text, View, StyleSheet, SafeAreaView, Image, Dimensions, StatusBar, TouchableOpacity, Button} from 'react-native'
 
 
 const { width, height} = Dimensions.get('window');
@@ -25,10 +25,10 @@ class LockScreen extends Component {
                         <Text style ={styles.time}>{moment().format('h:mm')}</Text>
                         <Text style={styles.date}>{moment().format('dddd, MMMM DD')}</Text>
                     </View>
-                    <View style = {styles.buttons}>
+                    <View style = {styles.containers}>
                     <TouchableOpacity onPress={() =>navigate('SettingsScreen')}>
                             <Image source = {require('../assets/settingsGear.png')} 
-                                style = {{marginRight: '30%', width: '60%', height: '25%'}}
+                               // style = {{marginRight: '30%', width: '60%', height: '25%'}}
                             />
                         </TouchableOpacity>
 
@@ -100,3 +100,38 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
       },
 });
+
+
+//This is an example code for Navigator// 
+//import React, { Component } from 'react';
+//import react in our code. 
+//import { StyleSheet, View, Button} from 'react-native';
+//import all the components we are going to use.
+
+// export default class LockScreen extends Component {
+//   static navigationOptions = {
+//     title: 'First Page',
+//     //Sets Header text of Status Bar
+//     headerStyle: {
+//       backgroundColor: '#f4511e',
+//       //Sets Header color
+//     },
+//     headerTintColor: '#fff',
+//     //Sets Header text color
+//     headerTitleStyle: {
+//       fontWeight: 'bold',
+//       //Sets Header text style
+//     },
+//   };
+
+//   render() {
+//     const { navigate } = this.props.navigation;
+//     return (
+//       <View style={styles.container}>
+//         <Button title='Go next'
+//         onPress={() =>navigate('SettingsScreen')}
+//         />
+//       </View>
+//     );
+//   }
+// }
