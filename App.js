@@ -11,7 +11,10 @@ import SettingsScreen from './screens/SettingsScreen';
 
 const App = createStackNavigator({
   //Constant which holds all the screens
-    LockScreen: { screen: LockScreen }, 
+    LockScreen: { screen: LockScreen, 
+    navigationOptions: {
+      header: null,
+    }}, 
     SettingsScreen: { screen: SettingsScreen}, 
   },
   {
