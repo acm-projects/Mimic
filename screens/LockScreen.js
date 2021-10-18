@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
-import { Text, View, StyleSheet, SafeAreaView, Image, Dimensions, StatusBar, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, SafeAreaView, Image, Dimensions, StatusBar, TouchableOpacity} from 'react-native'
 
 
 const { width, height} = Dimensions.get('window');
@@ -16,23 +16,26 @@ class LockScreen extends Component {
             <SafeAreaView style = {styles.container}>
                 <StatusBar barStyle ="light-content" hidden={false} />
                     <Image 
-                        source={require('Background.png')} 
-                        style={{ position: 'absolute', top:0, width: width, height: height}}
+                        source={require('../assets/Background.png')} 
+                        style={{ position: 'absolute', top:0, width: width, height: height,}}
                     />
                     <View style = {styles.datetime}>
-                        <Image source={require('Lock.png')} />    
-                        <Text style ={styles.time}>{moment().format('HH:mm')}</Text>
-                        <Text style={styles.date}>{moment().format('dddd DD, MMMM')}</Text>
+                        <Image source={require('../assets/Lock.png')} />    
+                        <Text style ={styles.time}>{moment().format('h:mm')}</Text>
+                        <Text style={styles.date}>{moment().format('dddd, MMMM DD')}</Text>
                     </View>
                     <View style = {styles.buttons}>
-                        <TouchableOpacity>
-                            <Image source = {require('FlashlightButton.png')} />
+                        <TouchableOpacity style>
+                            <Image source = {require('../assets/settingsGear.png')} 
+                                style = {{marginLeft: '30%', width: '60%', height: '25%'}}
+                             />
                         </TouchableOpacity>
 
                         <TouchableOpacity>
-                            <Image source = {require('Camera.png')} />
+                            <Image source = {require('../assets/Camera.png')}
+                                style = {{marginRight: '25%', width: '80%', height: '23%'}}
+                            />
                         </TouchableOpacity>
-                        
                     </View>
                     <View style = {styles.swipe}>
                         <Text style = {styles.swipeText}>Swipe up to open</Text>
@@ -61,18 +64,20 @@ const styles = StyleSheet.create({
     },
     date: {
         fontSize: 22,
-        fontWeight: '350',
+        fontWeight: '300',
         color: '#FFFF',
         textAlign: 'center',
         letterSpacing: 0.32
     },
     buttons: {
-        marginTop: 480,
+        //marginTop: 480,
+        width: '100%',
         flexDirection: 'row',
-        marginLeft: 46,
-        marginRight: 46,
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        position: 'relative', 
+        top: '115%',
+        
     },
     swipe: {
         position: 'absolute',
