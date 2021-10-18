@@ -1,18 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+
+//Import react-navigation
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator} from 'react-navigation-stack';
+
+
 import LockScreen from './screens/LockScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
-export default class App extends React.Component {
-  render() {
-    return <LockScreen />;
+const App = createStackNavigator({
+  //Constant which holds all the screens
+    LockScreen: { screen: LockScreen }, 
+    SettingsScreen: { screen: SettingsScreen}, 
+  },
+  {
+    initialRouteName: 'LockScreen',
   }
-}
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ffff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
+
+export default createAppContainer(App);

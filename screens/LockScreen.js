@@ -25,7 +25,7 @@ class LockScreen extends Component {
                         <Text style={styles.date}>{moment().format('dddd, MMMM DD')}</Text>
                     </View>
                     <View style = {styles.buttons}>
-                        <TouchableOpacity style>
+                    <TouchableOpacity style={styles.buttons} onPress={() =>navigate('SettingsScreen')}>
                             <Image source = {require('../assets/settingsGear.png')} 
                                 style = {{marginLeft: '30%', width: '60%', height: '25%'}}
                              />
@@ -92,5 +92,11 @@ const styles = StyleSheet.create({
         letterSpacing: -0.41,
         textAlign: 'center',
         lineHeight: 22
-    }
+    },
+    containers: {
+        flex: 1,
+        //backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
 });
