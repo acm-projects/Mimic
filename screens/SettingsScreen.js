@@ -27,7 +27,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text} from 'react-native';
 //import all the components we are going to use.
 
-export default class SecondPage extends Component {
+export default class SettingsScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (

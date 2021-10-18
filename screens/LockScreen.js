@@ -12,6 +12,7 @@ class LockScreen extends Component {
 
 
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <SafeAreaView style = {styles.container}>
                 <StatusBar barStyle ="light-content" hidden={false} />
