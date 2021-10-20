@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import {
   Dimensions,
   SafeAreaView,
@@ -20,26 +19,26 @@ const CallScreen = () => {
       <ImageBackground style={styles.imgBackground}
         source = {require('./assets/images/background.jpg')} // load selected background to this location
         blurRadius = {30}>
-	        <Text style = {styles.userId}>Billie Bob Joe</Text>
+	        <Text style = {styles.userId}>Hyrum Moses</Text>
 
           <View style = {styles.staticImageContainer}>
             <Image
-              style={styles.staticImage}
+              style={styles.remindImage}
               source={require('./assets/images/remind.png')}
             />
 
             <Image
-              style={styles.staticImage}
+              style={styles.messageImage}
               source={require('./assets/images/message.png')}
             />
           </View>
 
           <View style = {styles.staticImageTextContainer}>
-            <Text style = {styles.buttonText}>
+            <Text style = {styles.imageText}>
               Remind Me
             </Text>
 
-            <Text style = {styles.buttonText}>
+            <Text style = {styles.imageText}>
               Message
             </Text>
           </View>
@@ -78,8 +77,8 @@ const styles = StyleSheet.create({
   userId: {
     color: 'white',
     textAlign: 'center',
-    fontSize: 30,
-    marginTop: "17%"
+    fontSize: 33,
+    marginTop: "12%"
   },
   screen: {
     flex: 1,
@@ -92,44 +91,55 @@ const styles = StyleSheet.create({
     height: "100%"
   },
   buttonContainer: {
+    position: 'absolute',
     justifyContent: "space-between",
-    top: "80%",
+    top: "73.5%",
     flexDirection: "row",
     width: "100%",
+    padding: "11%"
   },
   button: {
     height: width/5.25,
     width: width/5.25,
-    margin: "20%"
   },
   buttonTextContainer: {
     position: 'absolute',
     justifyContent: "space-between",
-    top: "79%",
+    top: "83.5%",
     flexDirection: "row",
     width: "100%",
   },
   buttonText: {
     color: '#fff',
-    fontSize: 15,
+    fontSize: 17,
     margin: "14%"
+  },
+  imageText: {
+    color: '#fff',
+    fontSize: 16,
+    margin: "11%"
   },
   staticImageContainer: {
     position: 'absolute',
     justifyContent: "space-between",
-    top: "49%",
+    top: "57%",
     flexDirection: "row",
     width: "100%",
   },
-  staticImage: {
-    height: width/10,
-    width: width/10,
-    margin: "15%"
+  remindImage: {
+    height: width/12,
+    width: width/12,
+    margin: "17%"
+  },
+  messageImage: {
+    height: width/14,
+    width: width/14,
+    margin: "17%"
   },
   staticImageTextContainer: {
     position: 'absolute',
     justifyContent: "space-between",
-    top: "57%",
+    top: "64%",
     flexDirection: "row",
     width: "100%",
   }
