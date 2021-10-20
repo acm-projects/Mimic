@@ -6,7 +6,7 @@ Worried about awkward, creepy, or downright dangerous interactions? This mobile 
 
 1. Mock call screen / customizable name for fake caller
 2. Mock lock screen and hidden call buttons
-3. Fake Screens to implement in order: Lock Screen, Coffee House App, Ecommerce, Chat
+3. Selection of different lockscreen backgrounds
 4. Replayable tutorial
 5. Option to have custom ringtones
 6. Physical button triggers for calls (Pending research, possible stretch goal)
