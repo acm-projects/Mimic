@@ -17,6 +17,7 @@ Worried about awkward, creepy, or downright dangerous interactions? This mobile 
 2. App pings other users near the area for help
 3. Root access / start Mimic from lock screen
 4. Timed fake calls
+5. Android support
 
 # Tech Stack
 
