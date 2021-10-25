@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, Dimensions, SafeAreaView, StatusBar, Tou
 
 
 const { width, height } = Dimensions.get('window');
-export default class CallEnded extends React.Component {
+export default class CIP extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
