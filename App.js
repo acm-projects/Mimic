@@ -10,9 +10,11 @@ import {
 } from 'react-native';
 
 import CallScreen from './CallScreen.js';
+import InCall from './InCall.js';
+import EndTutorial from './EndTutorial.js';
 
 const App = () => {
-  return <CallScreen/>;
+  return <EndTutorial/>;
 };
 
 export default App;
