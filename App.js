@@ -7,7 +7,11 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 
 import LockScreen from './screens/LockScreen';
+import CallEnded from './screens/CallEnded';
+import CIP from './screens/CIP';
 import SettingsPage from './screens/settingsPage';
+import CallScreen from './screens/CallScreen';
+
 
 const App = createStackNavigator({
   //Constant which holds all the screens
@@ -24,6 +28,24 @@ const App = createStackNavigator({
     // navigationOptions:{
     //   header: null,
     // }
+  },
+  CIP: {
+    screen: CIP,
+    navigationOptions: {
+      headerShown: false,
+    }
+  },
+  CallEnded: {
+    screen: CallEnded,
+    navigationOptions: {
+      headerShown: false,
+    }
+  },
+  CallScreen: {
+    screen: CallScreen,
+    navigationOptions: {
+      headerShown: false,
+    }
   },
 },
   {

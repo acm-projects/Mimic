@@ -5,7 +5,9 @@ import { StyleSheet, Text, View, Image, Dimensions, SafeAreaView, StatusBar, Tou
 
 const { width, height } = Dimensions.get('window');
 export default class CallEnded extends React.Component {
+
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" hidden={false} />
@@ -83,9 +85,11 @@ export default class CallEnded extends React.Component {
         </View>
 
         <View style = {styles.end}>
-         <Image style = {styles.icon}
+          <TouchableOpacity onPress={() => navigate('LockScreen')}>
+             <Image style = {styles.icon}
             source = {require('./assets/endCall.png')}
-          />
+             />
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
 

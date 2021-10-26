@@ -30,7 +30,7 @@ class LockScreen extends Component {
 
         callBoth = () => {
             setTimeout(function () {
-                navigate('SettingsPage'); playRingtone();
+                navigate('CallScreen'); playRingtone();
             }, 5000);
 
         }

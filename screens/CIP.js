@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react'
 import { StyleSheet, Text, View, Image, Dimensions, SafeAreaView, StatusBar, TouchableOpacity, ListView } from 'react-native';
+
 
 
 
 const { width, height } = Dimensions.get('window');
 export default class CIP extends React.Component {
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" hidden={false} />
         <Image
-          source={require('./assets/Background.png')}
+          source={require('../assets/Background.png')}
           style={{ position: 'absolute', top: 0, width: width, height: height }}
           blurRadius={10}
         />
@@ -29,7 +31,7 @@ export default class CIP extends React.Component {
             <View style = {styles.middle}>
                 <View style = {styles.inner}>
                   <Image style = {styles.icon}
-                    source = {require('./assets/mic.png')}
+                    source = {require('../assets/mic.png')}
                   />
                   <Text style = {styles.words}>
                     mute
@@ -37,7 +39,7 @@ export default class CIP extends React.Component {
                 </View >
                 <View style = {styles.inner}>
                   <Image style = {styles.icon}
-                    source = {require('./assets/keypad.png')}
+                    source = {require('../assets/keypad.png')}
                   />
                   <Text style = {styles.words}>
                     keypad
@@ -83,9 +85,11 @@ export default class CIP extends React.Component {
         </View>
 
         <View style = {styles.end}>
-         <Image style = {styles.icon}
-            source = {require('./assets/endCall.png')}
-          />
+          <TouchableOpacity onPress={() => navigate('CallEnded')}>
+            <Image style = {styles.icon}
+              source = {require('./assets/endCall.png')}
+            />
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
 
