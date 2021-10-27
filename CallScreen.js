@@ -18,7 +18,7 @@ const CallScreen = () => {
       <ImageBackground style={styles.imgBackground}
         source = {require('./assets/images/background.jpg')} // load selected background to this location
         blurRadius = {30}>
-	        <Text style = {styles.userId}>Hyrum Moses</Text>
+	        <Text style = {styles.userId}>Caller ID</Text>
 
           <SafeAreaView style = {styles.staticImageContainer}>
             <Image
