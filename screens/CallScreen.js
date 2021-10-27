@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import {
   Dimensions,
@@ -13,65 +13,67 @@ import {
 
 const width = Dimensions.get('window').width;
 
-const CallScreen = () => {
+class CallScreen extends Component {
+  render() {
     const { navigate } = this.props.navigation;
-  return (
-    <View style={styles.screen}>
-      <ImageBackground style={styles.imgBackground}
-        source = {require('./assets/background.jpg')} // load selected background to this location
-        blurRadius = {30}>
-	        <Text style = {styles.userId}>Hyrum Moses</Text>
+    return (
+      <View style={styles.screen}>
+        <ImageBackground style={styles.imgBackground}
+          source={require('../assets/background.jpg')} // load selected background to this location
+          blurRadius={30}>
+          <Text style={styles.userId}>Hyrum Moses</Text>
 
-          <View style = {styles.staticImageContainer}>
+          <View style={styles.staticImageContainer}>
             <Image
               style={styles.remindImage}
-              source={require('./assets/remind.png')}
+              source={require('../assets/remind.png')}
             />
 
             <Image
               style={styles.messageImage}
-              source={require('./assets/message.png')}
+              source={require('../assets/message.png')}
             />
           </View>
 
-          <View style = {styles.staticImageTextContainer}>
-            <Text style = {styles.imageText}>
+          <View style={styles.staticImageTextContainer}>
+            <Text style={styles.imageText}>
               Remind Me
             </Text>
 
-            <Text style = {styles.imageText}>
+            <Text style={styles.imageText}>
               Message
             </Text>
           </View>
 
-          <View style = {styles.buttonContainer}>
+          <View style={styles.buttonContainer}>
             <TouchableOpacity onPress={() => navigate('LockScreen')}>
               <Image
                 style={styles.button}
-                source={require('./assets/decline.png')}
+                source={require('../assets/decline.png')}
               />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => navigate('CIP')}>
               <Image
                 style={styles.button}
-                source={require('./assets/accept.png')}
+                source={require('../assets/accept.png')}
               />
             </TouchableOpacity>
           </View>
 
-          <View style = {styles.buttonTextContainer}>
-            <Text style = {styles.buttonText}>
+          <View style={styles.buttonTextContainer}>
+            <Text style={styles.buttonText}>
               Decline
             </Text>
 
-            <Text style = {styles.buttonText}>
+            <Text style={styles.buttonText}>
               Accept
             </Text>
           </View>
-			</ImageBackground>
-    </View>
-  );
+        </ImageBackground>
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
@@ -100,8 +102,8 @@ const styles = StyleSheet.create({
     padding: "11%"
   },
   button: {
-    height: width/5.25,
-    width: width/5.25,
+    height: width / 5.25,
+    width: width / 5.25,
   },
   buttonTextContainer: {
     position: 'absolute',
@@ -128,13 +130,13 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   remindImage: {
-    height: width/12,
-    width: width/12,
+    height: width / 12,
+    width: width / 12,
     margin: "17%"
   },
   messageImage: {
-    height: width/14,
-    width: width/14,
+    height: width / 14,
+    width: width / 14,
     margin: "17%"
   },
   staticImageTextContainer: {

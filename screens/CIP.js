@@ -47,7 +47,7 @@ export default class CIP extends React.Component {
                 </View>
                 <View style = {styles.inner}> 
                   <Image style = {styles.icon}
-                    source = {require('./assets/speaker.png')}
+                    source = {require('../assets/speaker.png')}
                   />
                   <Text style = {styles.words}>
                     speaker
@@ -58,7 +58,7 @@ export default class CIP extends React.Component {
             <View style = {styles.middle}>
                 <View style = {styles.inner}>
                   <Image style = {styles.icon}
-                    source = {require('./assets/add.png')}
+                    source = {require('../assets/add.png')}
                   />
                   <Text style = {styles.words}>
                     add call
@@ -66,7 +66,7 @@ export default class CIP extends React.Component {
                 </View>
                 <View style = {styles.inner}>
                   <Image style = {styles.icon}
-                    source = {require('./assets/FT.png')}
+                    source = {require('../assets/FT.png')}
                   />
                   <Text style = {styles.words}>
                     FaceTime
@@ -74,7 +74,7 @@ export default class CIP extends React.Component {
                 </View>
                 <View style = {styles.inner}>
                   <Image style = {styles.icon}
-                    source = {require('./assets/contact.png')}
+                    source = {require('../assets/contact.png')}
                   />
                   <Text style = {styles.words}>
                     contacts
@@ -87,7 +87,7 @@ export default class CIP extends React.Component {
         <View style = {styles.end}>
           <TouchableOpacity onPress={() => navigate('CallEnded')}>
             <Image style = {styles.icon}
-              source = {require('./assets/endCall.png')}
+              source = {require('../assets/endCall.png')}
             />
           </TouchableOpacity>
         </View>

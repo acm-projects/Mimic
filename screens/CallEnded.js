@@ -12,7 +12,7 @@ export default class CallEnded extends React.Component {
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" hidden={false} />
         <Image
-          source={require('./assets/Background.png')}
+          source={require('../assets/Background.png')}
           style={{ position: 'absolute', top: 0, width: width, height: height }}
           blurRadius={10}
         />
@@ -31,7 +31,7 @@ export default class CallEnded extends React.Component {
             <View style = {styles.middle}>
                 <View style = {styles.inner}>
                   <Image style = {styles.icon}
-                    source = {require('./assets/mic.png')}
+                    source = {require('../assets/mic.png')}
                   />
                   <Text style = {styles.words}>
                     mute
@@ -39,7 +39,7 @@ export default class CallEnded extends React.Component {
                 </View >
                 <View style = {styles.inner}>
                   <Image style = {styles.icon}
-                    source = {require('./assets/keypad.png')}
+                    source = {require('../assets/keypad.png')}
                   />
                   <Text style = {styles.words}>
                     keypad
@@ -47,7 +47,7 @@ export default class CallEnded extends React.Component {
                 </View>
                 <View style = {styles.inner}> 
                   <Image style = {styles.icon}
-                    source = {require('./assets/speaker.png')}
+                    source = {require('../assets/speaker.png')}
                   />
                   <Text style = {styles.words}>
                     speaker
@@ -58,7 +58,7 @@ export default class CallEnded extends React.Component {
             <View style = {styles.middle}>
                 <View style = {styles.inner}>
                   <Image style = {styles.icon}
-                    source = {require('./assets/add.png')}
+                    source = {require('../assets/add.png')}
                   />
                   <Text style = {styles.words}>
                     add call
@@ -66,7 +66,7 @@ export default class CallEnded extends React.Component {
                 </View>
                 <View style = {styles.inner}>
                   <Image style = {styles.icon}
-                    source = {require('./assets/FT.png')}
+                    source = {require('../assets/FT.png')}
                   />
                   <Text style = {styles.words}>
                     FaceTime
@@ -74,7 +74,7 @@ export default class CallEnded extends React.Component {
                 </View>
                 <View style = {styles.inner}>
                   <Image style = {styles.icon}
-                    source = {require('./assets/contact.png')}
+                    source = {require('../assets/contact.png')}
                   />
                   <Text style = {styles.words}>
                     contacts
@@ -87,7 +87,7 @@ export default class CallEnded extends React.Component {
         <View style = {styles.end}>
           <TouchableOpacity onPress={() => navigate('LockScreen')}>
              <Image style = {styles.icon}
-            source = {require('./assets/endCall.png')}
+            source = {require('../assets/endCall.png')}
              />
           </TouchableOpacity>
         </View>
