@@ -4,7 +4,6 @@ import {
   Dimensions,
   SafeAreaView,
   StyleSheet,
-  View,
   Text,
   Image,
   TouchableOpacity,
@@ -15,13 +14,13 @@ const width = Dimensions.get('window').width;
 
 const CallScreen = () => {
   return (
-    <View style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
       <ImageBackground style={styles.imgBackground}
         source = {require('./assets/images/background.jpg')} // load selected background to this location
         blurRadius = {30}>
 	        <Text style = {styles.userId}>Hyrum Moses</Text>
 
-          <View style = {styles.staticImageContainer}>
+          <SafeAreaView style = {styles.staticImageContainer}>
             <Image
               style={styles.remindImage}
               source={require('./assets/images/remind.png')}
@@ -31,9 +30,9 @@ const CallScreen = () => {
               style={styles.messageImage}
               source={require('./assets/images/message.png')}
             />
-          </View>
+          </SafeAreaView>
 
-          <View style = {styles.staticImageTextContainer}>
+          <SafeAreaView style = {styles.staticImageTextContainer}>
             <Text style = {styles.imageText}>
               Remind Me
             </Text>
@@ -41,9 +40,9 @@ const CallScreen = () => {
             <Text style = {styles.imageText}>
               Message
             </Text>
-          </View>
+          </SafeAreaView>
 
-          <View style = {styles.buttonContainer}>
+          <SafeAreaView style = {styles.buttonContainer}>
             <TouchableOpacity>
               <Image
                 style={styles.button}
@@ -57,9 +56,9 @@ const CallScreen = () => {
                 source={require('./assets/images/accept.png')}
               />
             </TouchableOpacity>
-          </View>
+          </SafeAreaView>
 
-          <View style = {styles.buttonTextContainer}>
+          <SafeAreaView style = {styles.buttonTextContainer}>
             <Text style = {styles.buttonText}>
               Decline
             </Text>
@@ -67,9 +66,9 @@ const CallScreen = () => {
             <Text style = {styles.buttonText}>
               Accept
             </Text>
-          </View>
+          </SafeAreaView>
 			</ImageBackground>
-    </View>
+    </SafeAreaView>
   );
 };
 

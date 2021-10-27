@@ -11,10 +11,12 @@ import {
 
 import CallScreen from './CallScreen.js';
 import InCall from './InCall.js';
-import EndTutorial from './EndTutorial.js';
+import Tutorial from './Tutorial.js';
+
+this.state = 'tutorial'
 
 const App = () => {
-  return <EndTutorial/>;
+  return <Tutorial/>;
 };
 
 export default App;
