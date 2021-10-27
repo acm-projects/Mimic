@@ -12,7 +12,11 @@ import CIP from './screens/CIP';
 import SettingsPage from './screens/settingsPage';
 import CallScreen from './screens/CallScreen';
 
-
+const forFade = ({ current }) => ({
+  cardStyle: {
+    opacity: current.progress,
+  },
+});
 const App = createStackNavigator({
   //Constant which holds all the screens
   LockScreen: {
@@ -33,7 +37,13 @@ const App = createStackNavigator({
     screen: CIP,
     navigationOptions: {
       headerShown: false,
-    }
+      //different types of animations
+      // animationTypeForReplace: 'pop',
+      // presentation: 'card',
+      // presentation: 'modal',
+      // cardStyleInterpolator: forFade,
+    },
+   
   },
   CallEnded: {
     screen: CallEnded,
