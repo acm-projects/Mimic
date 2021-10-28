@@ -8,6 +8,7 @@ const { width, height } = Dimensions.get('window');
 export default class CIP extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
+    
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" hidden={false} />
@@ -85,7 +86,7 @@ export default class CIP extends React.Component {
         </View>
 
         <View style = {styles.end}>
-          <TouchableOpacity onPress={() => navigate('CallEnded')}>
+          <TouchableOpacity onPress={() => navigate('LockScreen')}>
             <Image style = {styles.icon}
               source = {require('../assets/endCall.png')}
             />

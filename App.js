@@ -41,7 +41,7 @@ const App = createStackNavigator({
       // animationTypeForReplace: 'pop',
       // presentation: 'card',
       // presentation: 'modal',
-      // cardStyleInterpolator: forFade,
+      cardStyleInterpolator: forFade,
     },
    
   },
@@ -55,6 +55,7 @@ const App = createStackNavigator({
     screen: CallScreen,
     navigationOptions: {
       headerShown: false,
+      cardStyleInterpolator: forFade,
     }
   },
 },
