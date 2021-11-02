@@ -1,114 +1,136 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React, { Component, Fragment } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Sound from 'react-native-sound';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SettingsPage from './components/settingsPage';
+import LockScreen from './components/LockScreen';
+import CallScreen from './components/CallScreen';
+import CIP from './components/CIP';
 
- import React from 'react';
- import type {Node} from 'react';
- import {
-   SafeAreaView,
-   ScrollView,
-   StatusBar,
-   StyleSheet,
-   Text,
-   useColorScheme,
-   View,
- } from 'react-native';
- 
- import {
-   Colors,
-   DebugInstructions,
-   Header,
-   LearnMoreLinks,
-   ReloadInstructions,
- } from 'react-native/Libraries/NewAppScreen';
- 
- const Section = ({children, title}): Node => {
-   const isDarkMode = useColorScheme() === 'dark';
-   return (
-     <View style={styles.sectionContainer}>
-       <Text
-         style={[
-           styles.sectionTitle,
-           {
-             color: isDarkMode ? Colors.white : Colors.black,
-           },
-         ]}>
-         {title}
-       </Text>
-       <Text
-         style={[
-           styles.sectionDescription,
-           {
-             color: isDarkMode ? Colors.light : Colors.dark,
-           },
-         ]}>
-         {children}
-       </Text>
-     </View>
-   );
- };
- 
- const App: () => Node = () => {
-   const isDarkMode = useColorScheme() === 'dark';
- 
-   const backgroundStyle = {
-     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-   };
- 
-   return (
-     <SafeAreaView style={backgroundStyle}>
-       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-       <ScrollView
-         contentInsetAdjustmentBehavior="automatic"
-         style={backgroundStyle}>
-         <Header />
-         <View
-           style={{
-             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-           }}>
-           <Section title="Welcome to Mimic!"></Section>
-           <Section title="Step One">
-             Edit <Text style={styles.highlight}>App.js</Text> to change this
-             screen and then come back to see your edits.
-           </Section>
-           <Section title="See Your Changes">
-             <ReloadInstructions />
-           </Section>
-           <Section title="Debug">
-             <DebugInstructions />
-           </Section>
-           <Section title="Learn More">
-             Read the docs to discover what to do next:
-           </Section>
-           <LearnMoreLinks />
-         </View>
-       </ScrollView>
-     </SafeAreaView>
-   );
- };
- 
- const styles = StyleSheet.create({
-   sectionContainer: {
-     marginTop: 32,
-     paddingHorizontal: 24,
-   },
-   sectionTitle: {
-     fontSize: 24,
-     fontWeight: '600',
-   },
-   sectionDescription: {
-     marginTop: 8,
-     fontSize: 18,
-     fontWeight: '400',
-   },
-   highlight: {
-     fontWeight: '700',
-   },
- });
- 
- export default App;
- 
+
+const Stack = createNativeStackNavigator();
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      callerID: "Mom",
+      wallpaper: "W3"
+    }
+    this.getCallerID();
+    this.getWallpaper();
+    
+  }
+
+  playSound = new Sound(require('./ios/ringtone.mp3'), error => console.log(error));
+
+  onSubmitCallerID = async = (caller) => {
+    try {
+      this.setState({ callerID: caller })
+      AsyncStorage.setItem('callerID', caller)
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+
+  onSubmitWallpaper = async = (wallpaper) => {
+    try {
+      this.setState({ wallpaper: wallpaper })
+      AsyncStorage.setItem('wallpaper', wallpaper)
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+
+  getCallerID = async () => {
+    try {
+      const value = await AsyncStorage.getItem('callerID')
+      if (value !== null) {
+        this.setState({ callerID: value })
+      }
+    } catch (e) {
+      // error reading value
+    }
+  }
+
+  getWallpaper = async () => {
+    try {
+      const value = await AsyncStorage.getItem('wallpaper')
+      if (value !== null) {
+        this.setState({ wallpaper: value })
+      }
+    } catch (e) {
+      // error reading value
+    }
+  }
+
+  
+  /*playRingtone = () => {
+    this.playSound.play((success) => this.playSound.reset());
+  }
+  stopRingtone = () => {
+    this.playSound.stop(() => {
+      // Note: If you want to play a sound after stopping and rewinding it,
+      // it is important to call play() in a callback.
+      this.playSound.play();
+    });
+  }
+  */
+  forFade = ({ current }) => ({
+    cardStyle: {
+      opacity: current.progress,
+    },
+  });
+
+  render() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="LockScreen"
+            options={{ headerShown: false, cardStyleInterpolator: this.forFade }}
+          >
+            {props => <LockScreen {...props} 
+              wallpaper={this.state.wallpaper} 
+              playSound={this.playSound}
+            />}
+          </Stack.Screen>
+          <Stack.Screen
+            name="CallScreen"
+            options={{ headerShown: false, cardStyleInterpolator: this.forFade }}
+          >
+            {props => <CallScreen {...props}
+              wallpaper={this.state.wallpaper}
+              callerID={this.state.callerID}
+              playSound={this.playSound}
+            />}
+          </Stack.Screen>
+          <Stack.Screen
+            name="CIP"
+            options={{ headerShown: false, cardStyleInterpolator: this.forFade }}
+          >
+            {props => <CIP {...props}
+              wallpaper={this.state.wallpaper}
+              callerID={this.state.callerID}
+            />}
+          </Stack.Screen>
+          <Stack.Screen
+            name="SettingsPage"
+            options={{ headerShown: false, cardStyleInterpolator: this.forFade }}
+          >
+            {props => <SettingsPage {...props}
+              callerID={this.state.callerID}
+              wallpaper={this.state.wallpaper}
+              onSubmitCallerID={this.onSubmitCallerID}
+              onSubmitWallpaper={this.onSubmitWallpaper}
+            />}
+          </Stack.Screen>
+        </Stack.Navigator>
+      </NavigationContainer>
+
+    );
+  }
+}
+
