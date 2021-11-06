@@ -1,6 +1,8 @@
 import React, { useState, Fragment, Component } from "react";
-import { StatusBar, StyleSheet, Text, View, SafeAreaView, TextInput, FlatList, Image, Button, Alert, TouchableOpacity } from "react-native";
+import { StatusBar, StyleSheet, Text, View, SafeAreaView, TextInput, FlatList, Image, Alert, TouchableOpacity, ScrollView } from "react-native";
 import images from '../jsonFiles/wallpaperData.json';
+import { Shadow } from 'react-native-neomorph-shadows';
+import { Neomorph } from 'react-native-neomorph-shadows';
 
 const numColumns = 2;
 class SettingsPage extends Component {
@@ -52,14 +54,14 @@ class SettingsPage extends Component {
     _renderItem = ({ item, index }) => {
         return (
             <View style={styles.image_container}>
-                <StatusBar hidden={true}/>
+                <StatusBar hidden={true} />
                 <TouchableOpacity
                     onPress={() => {
-                        Alert.alert("You have selected wallpaper " + (index + 1)),
-                            this.onSubmitWallpaper("W"+index)
+                        Alert.alert("Your wallpaper has been set!"),
+                            this.onSubmitWallpaper("W" + index)
                     }}
                 >
-                    <Image source={this.getImage(item.image)} style={ styles.imageStyle} />
+                    <Image source={this.getImage(item.image)} style={styles.imageStyle} />
                 </TouchableOpacity>
             </View>
 
@@ -72,12 +74,11 @@ class SettingsPage extends Component {
             input = userInput;
         };
 
-        //<Text>You are currently receiving calls from {this.props.callerID}</Text>
-        //<Text>You have currently selected wallpaper {this.props.wallpaper}</Text>
         return (
             <Fragment>
-                <SafeAreaView style={{ flex: 1 }}>
-                <TouchableOpacity
+
+                <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+                    <TouchableOpacity
                             style={styles.backButton}
                             onPress={() => this.props.navigation.navigate('LockScreen')}
                         >
@@ -162,13 +163,16 @@ class SettingsPage extends Component {
                     </View>
 
                     <View style={{ alignItems: 'center' }}>
-                        <TouchableOpacity style={styles.button}>
+                        <TouchableOpacity style={styles.button}
+                            onPress={() => this.props.navigation.navigate('Tutorial')}
+                        >
                             <Text>Tutorial</Text>
                         </TouchableOpacity>
                     </View>
 
 
                 </SafeAreaView>
+
             </Fragment>
 
         );
@@ -195,7 +199,7 @@ const styles = StyleSheet.create({
         height: 200,
         width: 120,
     },
-    imageStyleSelected:{
+    imageStyleSelected: {
         height: 200,
         width: 120,
         borderColor: 'red',
@@ -219,7 +223,7 @@ const styles = StyleSheet.create({
     heading: {
         //fontFamily: 'FiraMono-Medium',
         fontSize: 35,
-        
+
     },
     subHeading: {
         fontSize: 22,
@@ -252,7 +256,25 @@ const styles = StyleSheet.create({
         width: "10%",
         alignItems: 'center',
         marginLeft: '5%'
+    },
+    neomorphBack: {
+        shadowRadius: 1,
+
+        backgroundColor: '#E5E5E5',
+        width: 50,
+        height: 40,
+        marginLeft: 8,
+        shadowColor: "grey",
+
+
+        padding: 10,
+
+        borderRadius: 25,
+        marginTop: 8,
+        alignItems: 'center',
+
     }
+
 
 });
 

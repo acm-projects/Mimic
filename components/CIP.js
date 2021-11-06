@@ -134,10 +134,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   numStyle: {
-    fontSize: 34,
+    fontSize: 33,
     color: '#FFFF',
     textAlign: 'center',
-    marginTop: '14%'
+    marginTop: '13%'
   },
   callTime: {
     fontSize: 22,

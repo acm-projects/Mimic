@@ -23,6 +23,7 @@ static void InitializeFlipper(UIApplication *application) {
 }
 #endif
 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -36,6 +37,8 @@ static void InitializeFlipper(UIApplication *application) {
                                                    moduleName:@"Mimic"
                                             initialProperties:nil];
 
+  
+
   if (@available(iOS 13.0, *)) {
       rootView.backgroundColor = [UIColor systemBackgroundColor];
   } else {
@@ -47,6 +50,8 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+
+  
   return YES;
 }
 

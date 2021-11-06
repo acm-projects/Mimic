@@ -11,17 +11,22 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.9",
+    "@react-native-community/art": "^1.2.0",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
+    "@react-navigation/stack": "^6.0.11",
     "moment": "^2.29.1",
     "react": "17.0.2",
     "react-native": "0.65.1",
     "react-native-app-intro-slider": "^4.0.4",
     "react-native-confetti-cannon": "^1.5.2",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-neomorph-shadows": "^1.1.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
     "react-native-sound": "^0.11.1",
     "react-native-swipe-gestures": "^1.0.5",
+    "react-native-typewriter": "^0.7.0",
     "react-native-vector-icons": "^9.0.0"
   },
   "devDependencies": {

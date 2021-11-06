@@ -1,25 +1,28 @@
+import 'react-native-gesture-handler';
 import React, { Component, Fragment } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Sound from 'react-native-sound';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator, CardStyleInterpolators} from '@react-navigation/stack';
 import SettingsPage from './components/settingsPage';
 import LockScreen from './components/LockScreen';
 import CallScreen from './components/CallScreen';
 import CIP from './components/CIP';
+import Tutorial from './components/tutorial.js';
 
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator(); 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
       callerID: "Mom",
-      wallpaper: "W3"
+      wallpaper: "W3",
+      tutorialState: true,
     }
     this.getCallerID();
     this.getWallpaper();
-    
+    this.getTutorialState();
   }
 
   playSound = new Sound(require('./ios/ringtone.mp3'), error => console.log(error));
@@ -38,6 +41,15 @@ export default class App extends Component {
     try {
       this.setState({ wallpaper: wallpaper })
       AsyncStorage.setItem('wallpaper', wallpaper)
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+  tutorialFirstTime = async = (state) => {
+    try {
+      this.setState({ tutorialState: state })
+      AsyncStorage.setItem('tutorialState', state)
     }
     catch (err) {
       console.log(err);
@@ -66,31 +78,36 @@ export default class App extends Component {
     }
   }
 
+  getTutorialState = async () => {
+    try {
+      const value = await AsyncStorage.getItem('tutorialState')
+      if (value !== null) {
+        this.setState({ tutorialState: value })
+      }
+    } catch (e) {
+      // error reading value
+    }
+  }
   
-  /*playRingtone = () => {
-    this.playSound.play((success) => this.playSound.reset());
-  }
-  stopRingtone = () => {
-    this.playSound.stop(() => {
-      // Note: If you want to play a sound after stopping and rewinding it,
-      // it is important to call play() in a callback.
-      this.playSound.play();
-    });
-  }
-  */
-  forFade = ({ current }) => ({
-    cardStyle: {
-      opacity: current.progress,
-    },
-  });
-
   render() {
+    forFade = ({ current }) => ({
+      cardStyle: {
+        opacity: current.progress,
+      },
+    });
+
     return (
-      <NavigationContainer>
-        <Stack.Navigator>
+      
+      <NavigationContainer theme={{ colors: { background: 'rgba(0,0,0,0)' } }}>
+        <Stack.Navigator
+        initialRouteName= "Tutorial" 
+        screenOptions={{
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
+        }}
+        >
           <Stack.Screen
             name="LockScreen"
-            options={{ headerShown: false, cardStyleInterpolator: this.forFade }}
+            options={{ headerShown: false, cardStyleInterpolator: forFade}}
           >
             {props => <LockScreen {...props} 
               wallpaper={this.state.wallpaper} 
@@ -99,7 +116,7 @@ export default class App extends Component {
           </Stack.Screen>
           <Stack.Screen
             name="CallScreen"
-            options={{ headerShown: false, cardStyleInterpolator: this.forFade }}
+            options={{ headerShown: false, cardStyleInterpolator: forFade}}
           >
             {props => <CallScreen {...props}
               wallpaper={this.state.wallpaper}
@@ -109,7 +126,7 @@ export default class App extends Component {
           </Stack.Screen>
           <Stack.Screen
             name="CIP"
-            options={{ headerShown: false, cardStyleInterpolator: this.forFade }}
+            options={{ headerShown: false, cardStyleInterpolator: forFade}}
           >
             {props => <CIP {...props}
               wallpaper={this.state.wallpaper}
@@ -118,18 +135,28 @@ export default class App extends Component {
           </Stack.Screen>
           <Stack.Screen
             name="SettingsPage"
-            options={{ headerShown: false, cardStyleInterpolator: this.forFade }}
+            options={{ headerShown: false, cardStyleInterpolator: forFade}}
           >
             {props => <SettingsPage {...props}
               callerID={this.state.callerID}
               wallpaper={this.state.wallpaper}
               onSubmitCallerID={this.onSubmitCallerID}
               onSubmitWallpaper={this.onSubmitWallpaper}
+              onDoneTutorial={this.onDoneTutorial}
+            />}
+          </Stack.Screen>
+          <Stack.Screen
+            name="Tutorial"
+            options={{ headerShown: false, cardStyleInterpolator: forFade}}
+          >
+            {props => <Tutorial {...props}
+              isFirstTime={this.state.isFirstTime}
+              tutorialFirstTime={this.tutorialFirstTime}
             />}
           </Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
-
+      
     );
   }
 }
